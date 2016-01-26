@@ -16,10 +16,41 @@ public class BagProject {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        LinkedBag myBag = new LinkedBag();
+        myBag.add("Hello!");
+        myBag.add("Hel");
+        myBag.add("Hi!");
+        myBag.add("jello!");
+        myBag.add("low!");
+        myBag.add("He!");
+        myBag.add("frank");
+        myBag.add("alrighty");
+        myBag.add("then");
         
-        TestIntegerBag();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+        myBag.remove();
+//        TestIntegerBag();
+//        TestStringBag();
     }
      
+    public static void TestStringBag(){
+        Bag<String> myBag = new Bag<String>();
+        //Bag<T> myBag = new Bag<T>();
+        //integerBag myBag = new IntegerBag();
+        
+        myBag.add("Mark");
+        myBag.remove();
+        System.out.println(myBag);
+        myBag.clear();
+    }
+    
     public static void TestIntegerBag(){ 
 
 //   System.out.println("Hello");
