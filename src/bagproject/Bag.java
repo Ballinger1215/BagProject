@@ -9,14 +9,14 @@ package bagproject;
  *
  * @author mbolli4593
  */
-public class IntegerBag {
-    private int Data[];  // this is the bag data array
+public class Bag <T> {
+     private T Data[];  // this is the bag data array
     private static int Capacity = 10;   //this is the total capacity of the bag
     
     private int numberOfEntries = 0;  
     
-    public IntegerBag(){
-        Data = new int[Capacity];
+    public Bag(){
+        Data = (T[]) new Object[Capacity];
     }
     
     public int getCurrentSize(){
@@ -32,7 +32,7 @@ public class IntegerBag {
     }
 //        return (numberOfEntries == 0);
 
-    public void add(int newData){
+    public void add(T newData){
         //if bag is full?
         if(numberOfEntries<Capacity)
         {
@@ -46,7 +46,7 @@ public class IntegerBag {
     
     public void remove(){
         if(numberOfEntries>0){
-            Data[numberOfEntries] = 0;
+            Data[numberOfEntries] = null;
             numberOfEntries--; //numberOfEntries = numberOfEntries-1;
         } else {
             System.out.println("Bag is empty! Add Something!");
@@ -64,13 +64,13 @@ public class IntegerBag {
         if(numberOfEntries>index && index < Capacity){
             
             System.out.println("trying to remove at " + index);
-            Data[index] = 0;
+            Data[index] = null;
             for(int i=index; i<numberOfEntries-1; i++){
                 Data[i] = Data[i+1];
             }
             numberOfEntries--;
             
-            Data[numberOfEntries]=0;
+            Data[numberOfEntries] = null;
             
         }else{
             
@@ -90,7 +90,7 @@ public class IntegerBag {
         return returnString;
     }
     
-    public void removeItem(int item){
+    public void removeItem(T item){
         
         boolean found = false;
         
@@ -114,4 +114,5 @@ public class IntegerBag {
         
     }
     
+
 }
