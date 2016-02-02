@@ -10,8 +10,8 @@ package bagproject;
  * @author mbolli4593
  */
 public class LinkedBag {
-    private Node firstNode;
-    private int numberOfEntries;
+    public Node firstNode;
+    public int numberOfEntries;
     
     public LinkedBag() {
         firstNode = null;
@@ -44,5 +44,53 @@ public class LinkedBag {
             System.out.println("Nothing to remove");
             
         }
+    }
+    
+    public void removeItem(String item) {
+        
+        Node iterator = firstNode;
+        Node previous = null;
+        boolean found = false;
+        
+        while(!found && iterator != null){
+            
+            if(iterator.data == item){
+                
+            
+                if(previous==null){
+                    // this handles the first node
+                    remove();
+                    
+                }else{
+                
+                previous.next = iterator.next;
+                numberOfEntries--;
+
+                }
+                
+                found = true;
+            
+            }
+            
+//            System.out.println(iterator.data);
+            previous = iterator;
+            iterator = iterator.next;
+            
+        }
+        
+    }
+    
+    public String toString(){
+        
+        Node iterator = firstNode;
+        String result = "";
+        
+        while(iterator!=null){
+            
+            result = result + "\n" + iterator.data;
+            iterator = iterator.next;
+        }
+        
+        return result;
     }
 }
