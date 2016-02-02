@@ -20,22 +20,23 @@ public class BagProject {
         myBag.add("Hello!");
         myBag.add("Hel");
         myBag.add("Hi!");
-        myBag.add("jello!");
-        myBag.add("low!");
-        myBag.add("He!");
-        myBag.add("frank");
-        myBag.add("alrighty");
         myBag.add("then");
+        System.out.println(myBag);
         
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
-        myBag.remove();
+        
+        myBag.removeItem("then");
+        myBag.removeItem("Hello!");
+        System.out.println(myBag);
+        
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
+//        myBag.remove();
 //        TestIntegerBag();
 //        TestStringBag();
     }
